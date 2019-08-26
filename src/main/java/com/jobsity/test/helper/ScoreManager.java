@@ -20,7 +20,6 @@ public class ScoreManager implements ScoreManagerI {
 
         if(firstBallScore == 10) {
             total += firstBallScore;
-            ArrayList<Integer> container = new ArrayList<>();
 
             for (int i = index+1, count = 0; i < scoreSheet.size(); i++) {
                 if(count == 2) {

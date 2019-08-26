@@ -23,7 +23,6 @@ public class FactoryService {
         scoreSheetReader = new ScoreSheetReader();
         scoreManager = new ScoreManager();
     }
-
     public static FactoryService getInstance() {
         if(instance == null)
             instance = new FactoryService();
