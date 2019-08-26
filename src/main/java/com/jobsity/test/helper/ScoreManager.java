@@ -1,5 +1,6 @@
 package com.jobsity.test.helper;
 
+import com.jobsity.test.enumeration.FrameType;
 import com.jobsity.test.model.BowlingFrame;
 import com.jobsity.test.model.Person;
 
@@ -9,9 +10,12 @@ import java.util.Map;
 
 public class ScoreManager implements ScoreManagerI {
    @Override
-   public  int calculateFrame(List<BowlingFrame> scoreSheet, int total,  int index) {
-        System.out.println(" this is index  before base case" + index);
+   public  List<BowlingFrame> calculateFrame(List<BowlingFrame> scoreSheet) {
+       int total = helper(scoreSheet, 0, 0);
+       return scoreSheet;
+    }
 
+    public  int helper(List<BowlingFrame> scoreSheet, int total,  int index) {
         if(index == scoreSheet.size()-1) return total;
 
         int firstBallScore =  scoreSheet.get(index).getFirstBallScore();
@@ -23,7 +27,7 @@ public class ScoreManager implements ScoreManagerI {
 
             for (int i = index+1, count = 0; i < scoreSheet.size(); i++) {
                 if(count == 2) {
-                   break;
+                    break;
                 }
                 if(scoreSheet.get(i).getFirstBallScore() > 0) {
                     total += scoreSheet.get(i).getFirstBallScore();
@@ -36,30 +40,38 @@ public class ScoreManager implements ScoreManagerI {
                 }
             }
 
-            System.out.println(firstBallScore + " | X" );
-            System.out.println("[ " + total + " ]");
+//            System.out.println(firstBallScore + " | X" );
+//            System.out.println("[ " + total + " ]");
+            scoreSheet.get(index).setScore(total);
+            scoreSheet.get(index).setType(FrameType.STRIKE);
 
-           return calculateFrame(scoreSheet,  total,  ++index);
+            return helper(scoreSheet,  total,  ++index);
         }
 
         else if(frameSum < 10) {
             total += frameSum;
             if(secondBallScore == 0) {
-                System.out.println(firstBallScore + " | --" );
-                System.out.println("[ " + total + " ]");
+//                System.out.println(firstBallScore + " | --" );
+//                System.out.println("[ " + total + " ]");
+                scoreSheet.get(index).setScore(total);
+                scoreSheet.get(index).setType(FrameType.DASH);
             }
             else {
-                System.out.println(firstBallScore + " | " + secondBallScore );
-                System.out.println("[ " + total + " ]");
+//                System.out.println(firstBallScore + " | " + secondBallScore );
+//                System.out.println("[ " + total + " ]");
+                scoreSheet.get(index).setScore(total);
+                scoreSheet.get(index).setType(FrameType.NUMBER);
             }
         }
         else {
             total +=  frameSum + scoreSheet.get(index+1).getFirstBallScore();
-            System.out.println(firstBallScore + " | /" );
-            System.out.println("[ " + total + " ]");
+//            System.out.println(firstBallScore + " | /" );
+//            System.out.println("[ " + total + " ]");
+            scoreSheet.get(index).setScore(total);
+            scoreSheet.get(index).setType(FrameType.SPARE);
         }
 
-        return calculateFrame(scoreSheet,  total,  ++index);
+        return helper(scoreSheet,  total,  ++index);
     }
 
 
