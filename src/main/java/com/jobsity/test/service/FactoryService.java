@@ -18,6 +18,8 @@ public class FactoryService {
     private  ScoreSheetReaderI scoreSheetReader;
     private  ScoreManagerI scoreManager;
 
+    //I'm just gathering all instances inside
+    // here so i don't have to instantiate anywhere else
     private FactoryService () {
         outputFormatter = new OutputFormatter();
         scoreSheetReader = new ScoreSheetReader();

@@ -12,6 +12,7 @@ public class ScoreManager implements ScoreManagerI {
        return scoreSheet;
     }
 
+    // I'm just using tail recursion  /w helper method
     public  int helper(List<BowlingFrame> scoreSheet, int total,  int index) {
         if(index == scoreSheet.size()-1) return total;
 
@@ -19,9 +20,11 @@ public class ScoreManager implements ScoreManagerI {
         int secondBallScore =  scoreSheet.get(index).getSecondBallScore();
         int frameSum = firstBallScore + secondBallScore;
 
+        // considering the first one is a Strike
         if(firstBallScore == 10) {
             total += firstBallScore;
 
+            // this loop is to apply the bonus, e. i. giving the next 2 moves + 10 pts
             for (int i = index+1, count = 0; i < scoreSheet.size(); i++) {
                 if(count == 2) {
                     break;
@@ -45,11 +48,13 @@ public class ScoreManager implements ScoreManagerI {
 
         else if(frameSum < 10) {
             total += frameSum;
+            // no scores
             if(secondBallScore == 0) {
                 scoreSheet.get(index).setScore(total);
                 scoreSheet.get(index).setType(FrameType.DASH);
             }
             else {
+                // when player just dont add up to 10
                 scoreSheet.get(index).setScore(total);
                 scoreSheet.get(index).setType(FrameType.NUMBER);
             }

@@ -11,6 +11,8 @@ import javax.validation.constraints.Min;
 @ToString
 public  class BowlingFrame {
 
+    // this class abstracts away what a
+    //bowling frame is
     @Min(value = 1, message = "A player can't score less than 1 at a round")
     @Max(value = 10, message = "A player can't score more than 10 at a round")
     private int firstBallScore;

@@ -33,6 +33,7 @@ public class ScoreSheetReader implements ScoreSheetReaderI {
                 playerName = sheetLine[0];
                 playerName = playerName.substring(0, 1).toUpperCase() + playerName.substring(1);
 
+                //basically, if player exists  add a new score frame
                 if (players.get(playerName) != null) {
                     player = players.get(playerName);
                     currBf = player.getScoreSheet().get(player.getScoreSheet().size() - 1);
@@ -45,6 +46,7 @@ public class ScoreSheetReader implements ScoreSheetReaderI {
                         player.getScoreSheet().add(bf);
                     }
                 } else {
+                    //otherwise initialize it
                     player = new Person();
                     player.setName(playerName);
                     player.setScoreSheet(new ArrayList<>());
