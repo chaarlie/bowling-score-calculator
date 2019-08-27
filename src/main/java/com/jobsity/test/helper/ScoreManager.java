@@ -2,16 +2,13 @@ package com.jobsity.test.helper;
 
 import com.jobsity.test.enumeration.FrameType;
 import com.jobsity.test.model.BowlingFrame;
-import com.jobsity.test.model.Person;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class ScoreManager implements ScoreManagerI {
    @Override
    public  List<BowlingFrame> calculateFrame(List<BowlingFrame> scoreSheet) {
-       int total = helper(scoreSheet, 0, 0);
+       helper(scoreSheet, 0, 0);
        return scoreSheet;
     }
 
@@ -40,8 +37,6 @@ public class ScoreManager implements ScoreManagerI {
                 }
             }
 
-//            System.out.println(firstBallScore + " | X" );
-//            System.out.println("[ " + total + " ]");
             scoreSheet.get(index).setScore(total);
             scoreSheet.get(index).setType(FrameType.STRIKE);
 
@@ -51,31 +46,21 @@ public class ScoreManager implements ScoreManagerI {
         else if(frameSum < 10) {
             total += frameSum;
             if(secondBallScore == 0) {
-//                System.out.println(firstBallScore + " | --" );
-//                System.out.println("[ " + total + " ]");
                 scoreSheet.get(index).setScore(total);
                 scoreSheet.get(index).setType(FrameType.DASH);
             }
             else {
-//                System.out.println(firstBallScore + " | " + secondBallScore );
-//                System.out.println("[ " + total + " ]");
                 scoreSheet.get(index).setScore(total);
                 scoreSheet.get(index).setType(FrameType.NUMBER);
             }
         }
         else {
             total +=  frameSum + scoreSheet.get(index+1).getFirstBallScore();
-//            System.out.println(firstBallScore + " | /" );
-//            System.out.println("[ " + total + " ]");
+
             scoreSheet.get(index).setScore(total);
             scoreSheet.get(index).setType(FrameType.SPARE);
         }
 
         return helper(scoreSheet,  total,  ++index);
-    }
-
-
-    public int calculateTotal(Person player) {
-        return 0;
     }
 }

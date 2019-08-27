@@ -24,5 +24,5 @@ public interface OutputFormatterI {
         }
         return result;
     }
-    public void toCommandLine(Person player);
+    void toCommandLine(Person player);
 }
