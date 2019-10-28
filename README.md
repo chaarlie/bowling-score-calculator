@@ -1,4 +1,4 @@
-Hello, this is a sample calculator for USA bowling 
+Score calculator for USA bowling 
 score sheet. 
 
 Project is in Java language and can be run as a console application.
