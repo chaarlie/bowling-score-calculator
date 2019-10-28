@@ -1,6 +1,6 @@
-package com.jobsity.test.util;
+package com.bowlingscore.util;
 
-import com.jobsity.test.model.Person;
+import com.bowlingscore.model.Person;
 
 import java.io.IOException;
 import java.util.Map;

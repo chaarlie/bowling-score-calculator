@@ -1,4 +1,4 @@
-package com.jobsity.test.model;
+package com.bowlingscore.model;
 
 import lombok.Getter;
 import lombok.Setter;

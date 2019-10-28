@@ -1,7 +1,7 @@
-package com.jobsity.test.util;
+package com.bowlingscore.util;
 
-import com.jobsity.test.model.BowlingFrame;
-import com.jobsity.test.model.Person;
+import com.bowlingscore.model.BowlingFrame;
+import com.bowlingscore.model.Person;
 
 import java.io.*;
 import java.util.ArrayList;

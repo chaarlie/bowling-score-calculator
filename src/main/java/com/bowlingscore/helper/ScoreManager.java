@@ -1,7 +1,7 @@
-package com.jobsity.test.helper;
+package com.bowlingscore.helper;
 
-import com.jobsity.test.enumeration.FrameType;
-import com.jobsity.test.model.BowlingFrame;
+import com.bowlingscore.enumeration.FrameType;
+import com.bowlingscore.model.BowlingFrame;
 
 import java.util.List;
 

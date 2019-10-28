@@ -1,7 +1,7 @@
-package com.jobsity.test;
+package com.bowlingscore;
 
-import com.jobsity.test.model.Person;
-import com.jobsity.test.service.FactoryService;
+import com.bowlingscore.model.Person;
+import com.bowlingscore.service.FactoryService;
 
 import java.io.IOException;
 import java.util.Map;

@@ -1,6 +1,6 @@
-package com.jobsity.test.model;
+package com.bowlingscore.model;
 
-import com.jobsity.test.enumeration.FrameType;
+import com.bowlingscore.enumeration.FrameType;
 import lombok.*;
 
 import javax.validation.constraints.Max;

@@ -1,6 +1,6 @@
-package com.jobsity.test.helper;
+package com.bowlingscore.helper;
 
-import com.jobsity.test.model.BowlingFrame;
+import com.bowlingscore.model.BowlingFrame;
 
 import java.util.List;
 

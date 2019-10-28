@@ -1,10 +1,10 @@
-package com.jobsity.test;
+package com.bowlingscore.test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import com.jobsity.test.model.BowlingFrame;
-import com.jobsity.test.service.FactoryService;
+import com.bowlingscore.model.BowlingFrame;
+import com.bowlingscore.service.FactoryService;
 import org.junit.Test;
 
 import java.util.ArrayList;

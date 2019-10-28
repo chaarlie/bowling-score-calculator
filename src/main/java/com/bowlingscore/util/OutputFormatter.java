@@ -1,6 +1,6 @@
-package com.jobsity.test.util;
+package com.bowlingscore.util;
 
-import com.jobsity.test.model.Person;
+import com.bowlingscore.model.Person;
 
 public class OutputFormatter implements OutputFormatterI {
 

@@ -1,11 +1,11 @@
-package com.jobsity.test.service;
+package com.bowlingscore.service;
 
-import com.jobsity.test.helper.ScoreManager;
-import com.jobsity.test.helper.ScoreManagerI;
-import com.jobsity.test.util.OutputFormatterI;
-import com.jobsity.test.util.OutputFormatter;
-import com.jobsity.test.util.ScoreSheetReader;
-import com.jobsity.test.util.ScoreSheetReaderI;
+import com.bowlingscore.helper.ScoreManagerI;
+import com.bowlingscore.util.OutputFormatter;
+import com.bowlingscore.util.OutputFormatterI;
+import com.bowlingscore.util.ScoreSheetReader;
+import com.bowlingscore.util.ScoreSheetReaderI;
+import com.bowlingscore.helper.ScoreManager;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,8 +15,8 @@ public class FactoryService {
     private static FactoryService instance = null;
 
     private OutputFormatterI outputFormatter;
-    private  ScoreSheetReaderI scoreSheetReader;
-    private  ScoreManagerI scoreManager;
+    private ScoreSheetReaderI scoreSheetReader;
+    private ScoreManagerI scoreManager;
 
     //I'm just gathering all instances inside
     // here so i don't have to instantiate anywhere else

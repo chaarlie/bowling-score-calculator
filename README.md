@@ -10,7 +10,7 @@ Project is in Java language and can be run as a console application.
 **Running Steps**
 
 1. mvn package (in the root dir)
-2. **mvn exec:java -Dexec.mainClass="com.example.GameAnalyzer"**
+2. **mvn exec:java -Dexec.mainClass="com.bowlingscore.GameAnalyzer"**
 
 Note: If you'd like to pass in your own score sheet, you must
 modify pom.xml and replace file name (Book1.txt) with yours.
